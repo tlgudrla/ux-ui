@@ -33,6 +33,9 @@ display: block;
     height: auto;
 }
 /*로그인 폼*/
+.login-form :focus{
+    outline: 0;
+}
 .login-form fieldset{
     border: 0;
     padding: 0;
@@ -40,7 +43,9 @@ display: block;
     width: 460px;
     margin-left: auto;
     margin-right: auto;
-    background-color: pink;
+    /* background-color: pink; */
+}
+.container{
     display: flex;
     flex-flow: row wrap;
 }
@@ -50,13 +55,40 @@ display: block;
 .btn-login{
     width: 100%;
 }
+.user-email,
+.user-password{
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.user-email:focus-within,
+.user-password:focus-within{
+    border-color: #03CF5D;
+}
 .ip-state-wrapper{
     order: 1;
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
+    background-color: pink;
 }
 [name="userEmail"],
 [name="userPassword"] {
     box-sizing: border-box;
     width: 100%;
+    border: 0;
+    padding: 5px 10px 5px 20px;
+    /* background-color: lime; */
+}
+.btn-login{
+    margin-top: 10px;
+    background-color: #03CF5D;
+    color: #fff;
+    font-weight: 700;
+    border: 0;
+    padding: 16px 0;
 }
