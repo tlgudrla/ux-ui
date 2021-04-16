@@ -73,8 +73,8 @@ display: block;
     order: 1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
-    background-color: pink;
 }
 [name="userEmail"],
 [name="userPassword"] {
@@ -91,4 +91,54 @@ display: block;
     font-weight: 700;
     border: 0;
     padding: 16px 0;
+}
+.login-state{
+    position: relative;
+}
+.login-state label{
+    display: flex;
+    align-items: center;
+}
+.login-state .icon-check{
+    width: 24px;
+    height: 24px;
+    background-image: url(./../images/icon-unchecked.svg);
+    background-size: cover;
+    margin-right: 5px;
+}
+[name="state"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    cursor: pointer;
+}
+/* [name="state"]:focus{
+    opacity: 0;
+    box-shadow: 0 0 0 4px deepskyblue;
+    border-radius: 2px;
+    outline: 2px red;
+} */
+[name="state"]:checked + label .icon-check{
+    background-image: url(./../images/icon-checked.svg);
+}
+
+.login-ip label::after{
+    display: inline-block;
+    width: 36px;
+    text-align: right;
+    content: "OFF";
+    color: #a3a3a3;
+    font-weight: 800;
+    cursor: pointer;
+}
+[name="ip"]:checked + label::after{
+    content: "ON";
+    font-weight: 800;
+    color: #03CF5D;
+}
+[name="ip"]{
+    display: none;
 }
